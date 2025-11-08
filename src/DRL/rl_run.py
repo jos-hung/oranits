@@ -4,8 +4,8 @@ parent_dir = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(parent_dir)
 sys.path.append(os.path.dirname(parent_dir))
 
-from mappo.ddqn_trainer import DDQNTrainer
-from mappo.ddqn_agent import DDQNAgent
+from trainer.ddqn_trainer import DDQNTrainer
+from trainer.ddqn_agent import DDQNAgent
 import numpy as np
 import torch
 import sys

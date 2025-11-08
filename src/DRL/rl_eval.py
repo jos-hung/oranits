@@ -4,8 +4,8 @@ parent_dir = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(parent_dir)
 sys.path.append(os.path.dirname(parent_dir))
 
-from mappo.ddqn_trainer import DDQNTrainer
-from mappo.ddqn_agent import DDQNAgent
+from trainer.ddqn_trainer import DDQNTrainer
+from trainer.ddqn_agent import DDQNAgent
 import numpy as np
 import torch
 import sys
@@ -69,49 +69,7 @@ def create_agent(state_size, action_size, actor_fc1_units=64,
     else:
         checkpoint_path = save_dir + "/checkpoints/agent_" + str(agent_idx) +'_'+str(ckpt_idx)+ '.pth'
     if ppo:
-        # Create Actor/Critic networks based on designated parameters.
-        actor_net = ActorNet(actor_size, action_size, actor_fc1_units,
-                            actor_fc2_units).to(device)
-        critic_net = CriticNet(critic_size, critic_fc1_units, critic_fc2_units)\
-            .to(device)
-
-        # Create copy of Actor/Critic networks for action prediction.
-        actor_net_old = ActorNet(actor_size, action_size, actor_fc1_units,
-                                actor_fc2_units).to(device)
-        critic_net_old = CriticNet(critic_size, critic_fc1_units, critic_fc2_units)\
-            .to(device)
-        actor_net_old.load_state_dict(actor_net.state_dict())
-        critic_net_old.load_state_dict(critic_net.state_dict())
-
-        # Create PolicyNormal objects containing both sets of Actor/Critic nets.
-        actor_critic = PolicyNormal(actor_net, critic_net)
-        actor_critic_old = PolicyNormal(actor_net_old, critic_net_old)
-
-        # Initialize optimizers for Actor and Critic networks.
-        actor_optimizer = torch.optim.Adam(
-            actor_net.parameters(),
-            lr=actor_lr
-        )
-        critic_optimizer = torch.optim.Adam(
-            critic_net.parameters(),
-            lr=critic_lr
-        )
-
-        # # Create and return PPOAgent with relevant parameters.
-        agent = PPOAgent(
-            device=device,
-            actor_critic=actor_critic,
-            actor_critic_old=actor_critic_old,
-            gamma=gamma,
-            num_updates=num_updates,
-            eps_clip=eps_clip,
-            critic_loss=critic_loss,
-            entropy_bonus=entropy_bonus,
-            batch_size=batch_size,
-            actor_optimizer=actor_optimizer,
-            critic_optimizer=critic_optimizer,
-        )
-
+        raise NotImplemented()
     else:
         agent = DDQNAgent(state_size=state_size, action_size=action_size, checkpoint_path=checkpoint_path, load_model=load_from_file)
 

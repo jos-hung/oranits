@@ -1,4 +1,4 @@
-DEVICE = 0
+DEVICE = 4
 GLOBAL_SEED = 42
 
 log_configs = {
@@ -50,9 +50,9 @@ avg_reward = get_ideal_avg_reward()
 
 map_cfg = {
     'real_map': True,
-    # 'real_center_point': (21.007837, 105.841819), #bkhn
-    'real_center_point': (20.995417, 105.950051), #vin-university
-    'radius': 2500,
+    'real_center_point': (21.007837, 105.841819), #bkhn
+    # 'real_center_point': (20.995417, 105.950051), #vin-university
+    'radius': 1500,
     'n_lines': 15,
     'busy': 1,
     'fromfile': 1
