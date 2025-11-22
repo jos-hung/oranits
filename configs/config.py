@@ -1,8 +1,14 @@
 #!/usr/bin/env python
-# Created by "Thieu" at 20:09, 11/06/2024 ----------%                                                                               
-#       Email: nguyenthieu2102@gmail.com            %                                                    
-#       Github: https://github.com/thieu1995        %                         
-# --------------------------------------------------%
+"""Experiment parameter grids and model selection.
+
+`ParaConfig` is a convenience container used by the meta-heuristic experiment
+scripts. It centralizes parameter sweeps (epochs, population sizes, and
+algorithm-specific parameters) and the `models` list that controls which
+algorithms are executed in batch runs.
+
+This module is configuration-only; editing values changes experiment behavior
+but does not contain runtime logic.
+"""
 
 
 class ParaConfig:

@@ -241,7 +241,8 @@ class DDQNTrainer:
                         add_reward = ((vehicle_id+1)/mission_cfg['n_vehicle'])*((mission_cfg['n_miss_per_vec']-aidx)*(n_remove_depends)*50 - n_waiting*50)+ cnt_completed*mission_cfg['n_mission']
                         # if add_reward > modify_reward['current_wards'][aidx][vehicle_id][0]:
                         #     add_reward = modify_reward['current_wards'][aidx][vehicle_id][0]
-                        print("------->",vehicle_id, cnt_completed, n_remove_depends, n_waiting, modify_reward['current_wards'][aidx][vehicle_id], add_reward)
+                        # print("------->",vehicle_id, cnt_completed, n_remove_depends, n_waiting, modify_reward['current_wards'][aidx][vehicle_id], add_reward)
+                        # print("((mission_cfg['n_miss_per_vec']-aidx)*(n_remove_depends)*50 - n_waiting*50):",((mission_cfg['n_miss_per_vec']-aidx)*(n_remove_depends)*50 - n_waiting*50), add_reward)
                         modify_reward['current_wards'][aidx][vehicle_id][0] = profit + add_reward
                         
                         break

@@ -1,4 +1,16 @@
-DEVICE = 4
+"""System-wide configuration defaults.
+
+This module exposes low-level runtime defaults used across the project:
+- device and random seed defaults
+- logging configuration
+- mission/task/map/network defaults
+- DRL hyperparameters (e.g. `ddqn_cfg`)
+
+Modules that need runtime constants import values from here. Changing values
+will affect runs globally.
+"""
+
+DEVICE = 0
 GLOBAL_SEED = 42
 
 log_configs = {
@@ -77,5 +89,5 @@ ddqn_cfg = {
     "batch_size": 512,
     "maxlen_mem": 10000000,
     "modify_reward": True,
-    "combine": 0.00
+    "combine": 0.3
 }

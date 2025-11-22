@@ -1,3 +1,11 @@
+"""Baseline evaluation: random and greedy scheduling.
+
+This module implements simple baselines used for comparison with DRL and
+meta-heuristic methods. Functions here are intended for offline evaluation and
+write results to files under the evaluation output directory defined in
+`configs.config.ParaConfig`.
+"""
+
 import numpy as np
 from mealpy import Problem
 from torch import dtype

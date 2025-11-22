@@ -1,8 +1,20 @@
+# Module: run.py
+# Purpose: Main CLI entry point for running simulations and analyses.
+#
+# This module parses command-line arguments, configures a simple file-backed
+# logger (redirects stdout to a timestamped file under `logs/`), and dispatches
+# execution to DRL or meta-heuristic routines (e.g. `ddqn`, `many_metaheuristics`).
+#
+# Notes:
+# - This file changes `sys.stdout` to a `Logger` instance so print statements
+#   across the codebase are captured in a log file. No runtime logic is altered
+#   by the comments here.
+
 import matplotlib.pyplot as plt
-import scienceplots
+# import scienceplots
 import matplotlib
-matplotlib.rcParams['font.size']=11
-plt.style.use(["science", "ieee"])
+# matplotlib.rcParams['font.size']=11
+# plt.style.use(["science", "ieee"])
 from src import *
 import argparse
 from src.DRL.rl_run import ddqn

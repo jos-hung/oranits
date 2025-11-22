@@ -1,3 +1,15 @@
+"""Gym environment wrappers for the ITS simulation.
+
+This module defines two gym-compatible environments:
+- ITSEnv: multi-agent style observations (dict of per-vehicle arrays)
+- SITSEnv: single-agent environment used for A2C evaluation
+
+Environments build missions/vehicles from `write_config`/`Load` utilities and
+convert domain state into large flattened observation vectors. The code below
+only contains comments in addition to the original logic; no runtime behavior
+is changed.
+"""
+
 from physic_definition.system_base.ITS_based import Map, Task, Point, Mission, Vehicle, TaskGenerator
 from physic_definition.map.decas import *
 from physic_definition.map.graph import *

@@ -1,3 +1,14 @@
+"""Utilities for loading map, tasks and missions.
+
+This module provides JSON decoding helpers and the `Load` helper class used to
+construct `Map` and `Graph` objects and to attach offloading tasks to segments.
+It also provides convenience functions that return `config` dictionaries used
+by simulation code.
+
+Important: these are I/O and conversion helpers; comments added here do not
+alter runtime logic.
+"""
+
 from physic_definition.system_base.ITS_based import Task
 from physic_definition.map.map import Map
 from physic_definition.map.decas import *

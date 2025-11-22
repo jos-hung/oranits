@@ -1,3 +1,14 @@
+"""Evaluation utilities for trained DRL agents (A2C example).
+
+This module provides a small helper `test_model` that loads a trained A2C
+checkpoint, runs a number of evaluation episodes using `SITSEnv`, and writes
+basic summary CSV and a bar-plot of average reward. The module also contains a
+`__main__` block that constructs a test config and runs `test_model`.
+
+This file performs I/O and evaluation; comments added here are non-functional
+and do not change evaluation behavior.
+"""
+
 import os
 from datetime import datetime
 import pandas as pd
